@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :profiles
-  
-  get 'profile', to: 'pages#profile'
+  resources :profiles, except: [:show]
+  get 'profile/:id', to: 'profiles#show', as: 'profile_show'
+  get 'profiled', to: 'pages#profiled'
 
   get 'about', to: 'pages#about'
 
   get 'contact', to: 'pages#contact'
-
+  
   resources :blogs
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'pages#home'

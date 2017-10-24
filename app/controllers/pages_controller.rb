@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   def home
   end
 
-  def profile
+  def profiled
   end
 
   def about

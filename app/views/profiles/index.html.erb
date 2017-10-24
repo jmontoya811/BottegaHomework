@@ -1,10 +1,15 @@
 <h1>Profiles</h1>
+ <h3>Create a new profile Item</h3>
+
+<%= link_to  "Create New Item", new_profile_path %>
 
 <% @profile_items.each do |profile_item| %>
-
-  <p><%= profile_item.title %></p>
+<p><%= link_to profile_item.title, profile_show_path(profile_item) %></p>
   <p><%= profile_item.subtitle %></p>
   <p><%= profile_item.body %></p>
-
   <%= image_tag profile_item.thumb_image unless profile_item.thumb_image.nil? %>
+  <%= link_to "Show", profile_show_path(profile_item.id) %>
+  <%= link_to "Edit", edit_profile_path(profile_item) %>
+  <%= link_to "Delete profile Item", profile_path(profile_item), method: :delete, data: { confirm: 'Are you sure?' } %>
+  
 <% end %>

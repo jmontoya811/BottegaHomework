@@ -1,6 +1,6 @@
-3.times do |profile|
+3.times do |profile_item|
 	Profile.create!(
-		title: "So Rad, Dudes",
+		title: "Profile title: #{profile_item}",
 		subtitle: "Winter",
 		body: "This is the beginning of my first App",
 		main_image: "http://via.placeholder.com/600x300",

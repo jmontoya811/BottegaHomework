@@ -1,24 +1,7 @@
-<h1>Edit Profile</h1>
+ <h1>Edit Profile</h1>
 
-<%= form_for(@profile_item) do |f| %>
+<%= render 'form', profile: @profile_item %>
 
-<div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= f.label :subtitle %>
-    <%= f.text_field :subtitle %>
-  </div>
-
-  <div class="field">
-    <%= f.label :body %>
-    <%= f.text_area :body %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-
-  <% end %>
+ <%= link_to "Delete", profile_path(@profile_item.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+ <%= link_to "Show", profile_show_path(@profile_item.id)  %> 
+ <%= link_to "Back", profiles_path %> 
