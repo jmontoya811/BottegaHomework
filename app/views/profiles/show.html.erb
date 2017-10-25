@@ -5,3 +5,6 @@
 <p><%= @profile_item.body %></p>
 
 <%= link_to "Edit", edit_profile_path(@profile_item.id) %>
+<hr>
+<% params.inspect %>
+<%= Profile.find(params[:id]).title %>

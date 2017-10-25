@@ -9,7 +9,7 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    @profile_item = Profile.new(params.require(:profile).permit(:title, :subtitle, :body))
+    @profile_item = Profile.new(profile_params)
 
     respond_to do |f|
       if @profile_item.save
@@ -29,7 +29,7 @@ class ProfilesController < ApplicationController
   def update
     @profile_item = Profile.find(params[:id])
     respond_to do |format|
-      if @profile_item.update(params.require(:profile).permit(:title, :subtitle, :body))
+      if @profile_item.update(profile_params)
         format.html { redirect_to profiles_path, notice: 'Profile has been successfully updated.' }
       else
         format.html { render :edit }
@@ -52,5 +52,10 @@ class ProfilesController < ApplicationController
     end
   end 
 
+  private
+
+  def profile_params
+    params.require(:profile).permit(:title, :subtitle, :body)
+  end
 end
 
