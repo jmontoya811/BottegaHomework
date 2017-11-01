@@ -1,8 +1,15 @@
 class ProfilesController < ApplicationController
 
   def index
-  @profile_items = Profile.all
+  @profile_items = Profile.by_position
   end
+
+ def sort 
+    params[:order].each do |key, value|
+      Profile.find(value[:id]).update(position: value[:position])
+    end
+    render nothing: true
+  end 
 
   def new
     @profile_item = Profile.new

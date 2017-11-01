@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>SkillS</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title> <%= @page_title %> </title>
+  <%= csrf_meta_tags %>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
-  <body>
-  	<p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+  <meta name="keywords" content="<%= @seo_keywords %>" />
 
-        <% if current_user %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+
+ <div class="site-wrapper">
+
+    <div class="site-wrapper-inner">
+
+      <div class="cover-container">
+<% if current_user %>
 
        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
        
@@ -30,5 +36,12 @@
 
        <% end %>
     <%= yield %>
-  </body>
+      
+      </div>
+    </div>
+  </div>
+</body>
 </html>
+
+
+  

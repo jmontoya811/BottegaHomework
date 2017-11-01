@@ -1,3 +1,39 @@
-// Place all the styles related to the Profiles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "font-awesome";
+@import "bootstrap";
+@import "jquery-ui";
+
+.navbar {
+  background-color:  #cbf317;
+  text-decoration-color:  #5a5a5a;
+}
+
+body {
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+    padding-left: 2rem;
+    color: #25d83d;
+  }
+
+  .card {
+      float: left;
+      width: 33.333%;
+      padding: .75rem;
+      margin-bottom: 2rem;
+      border: 0;
+  }
+
+  .card > img {
+  margin-bottom: .75rem;
+  width: 300px;
+  height: 350px;
+}
+  .thumbnail > img {
+  margin-bottom: .75rem;
+  width: 300px;
+  height: 350px;
+}
+
+.thumbnail {
+  color: #25a5d8; 
+
+}
